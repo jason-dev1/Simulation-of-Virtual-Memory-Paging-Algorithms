@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/main.c42ab4b1.chunk.css",
+    "main.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/main.7635ad96.chunk.js",
+    "main.js.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/main.7635ad96.chunk.js.map",
+    "runtime-main.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/runtime-main.0678efb4.js",
+    "runtime-main.js.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/runtime-main.0678efb4.js.map",
+    "static/css/2.8aa5a7f8.chunk.css": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/2.8aa5a7f8.chunk.css",
+    "static/js/2.c922e3fc.chunk.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/2.c922e3fc.chunk.js",
+    "static/js/2.c922e3fc.chunk.js.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/2.c922e3fc.chunk.js.map",
+    "index.html": "/Simulation-of-Virtual-Memory-Paging-Algorithms/index.html",
+    "precache-manifest.1fdfdb2076c296522e88cc4a71d97e4f.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/precache-manifest.1fdfdb2076c296522e88cc4a71d97e4f.js",
+    "service-worker.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/service-worker.js",
+    "static/css/2.8aa5a7f8.chunk.css.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/2.8aa5a7f8.chunk.css.map",
+    "static/css/main.c42ab4b1.chunk.css.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/main.c42ab4b1.chunk.css.map",
+    "static/js/2.c922e3fc.chunk.js.LICENSE.txt": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/2.c922e3fc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0678efb4.js",
+    "static/css/2.8aa5a7f8.chunk.css",
+    "static/js/2.c922e3fc.chunk.js",
+    "static/css/main.c42ab4b1.chunk.css",
+    "static/js/main.7635ad96.chunk.js"
+  ]
+}
