@@ -12,7 +12,7 @@ TODO: Algorithms chooser
 */
 class App extends Component{
     state = {
-        referenceInputTextField : "0,2,3,1,2,1,4,5,6,2,4,5,3,2,3,8,5,7,2,0,6,4,1,9",
+        referenceInputTextField : "0,2,3,1,2,1,4,5,6,2,4,5,3,2,3,8,5,7,2,0,6,4,1,8",
         referenceString : ["0", "2", "3", "1", "2", "1", "4", "5", "6", "2", "4", "5", "3", "2", "3", "8", "5", "7", "2", "0", "6", "4", "1", "9"],
         frameNumber : 4,
         resetTurns: 4
