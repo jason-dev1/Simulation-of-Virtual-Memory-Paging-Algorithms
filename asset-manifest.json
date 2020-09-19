@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/main.c42ab4b1.chunk.css",
-    "main.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/main.9c44eca1.chunk.js",
-    "main.js.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/main.9c44eca1.chunk.js.map",
+    "main.css": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/main.f65f1e7b.chunk.css",
+    "main.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/main.eb97f912.chunk.js",
+    "main.js.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/main.eb97f912.chunk.js.map",
     "runtime-main.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/runtime-main.0678efb4.js",
     "runtime-main.js.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/runtime-main.0678efb4.js.map",
-    "static/css/2.8aa5a7f8.chunk.css": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/2.8aa5a7f8.chunk.css",
-    "static/js/2.c922e3fc.chunk.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/2.c922e3fc.chunk.js",
-    "static/js/2.c922e3fc.chunk.js.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/2.c922e3fc.chunk.js.map",
+    "static/css/2.4a6f1114.chunk.css": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/2.4a6f1114.chunk.css",
+    "static/js/2.42e3e8b7.chunk.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/2.42e3e8b7.chunk.js",
+    "static/js/2.42e3e8b7.chunk.js.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/2.42e3e8b7.chunk.js.map",
     "index.html": "/Simulation-of-Virtual-Memory-Paging-Algorithms/index.html",
-    "precache-manifest.4154377aebfce9250be1671e4a2c23f8.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/precache-manifest.4154377aebfce9250be1671e4a2c23f8.js",
+    "precache-manifest.4be4fbb1d9d9062534a5503e5be65aa0.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/precache-manifest.4be4fbb1d9d9062534a5503e5be65aa0.js",
     "service-worker.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/service-worker.js",
-    "static/css/2.8aa5a7f8.chunk.css.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/2.8aa5a7f8.chunk.css.map",
-    "static/css/main.c42ab4b1.chunk.css.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/main.c42ab4b1.chunk.css.map",
-    "static/js/2.c922e3fc.chunk.js.LICENSE.txt": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/2.c922e3fc.chunk.js.LICENSE.txt"
+    "static/css/2.4a6f1114.chunk.css.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/2.4a6f1114.chunk.css.map",
+    "static/css/main.f65f1e7b.chunk.css.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/main.f65f1e7b.chunk.css.map",
+    "static/js/2.42e3e8b7.chunk.js.LICENSE.txt": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/2.42e3e8b7.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.css": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/media/fontawesome-webfont.fee66e71.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.0678efb4.js",
-    "static/css/2.8aa5a7f8.chunk.css",
-    "static/js/2.c922e3fc.chunk.js",
-    "static/css/main.c42ab4b1.chunk.css",
-    "static/js/main.9c44eca1.chunk.js"
+    "static/css/2.4a6f1114.chunk.css",
+    "static/js/2.42e3e8b7.chunk.js",
+    "static/css/main.f65f1e7b.chunk.css",
+    "static/js/main.eb97f912.chunk.js"
   ]
 }
