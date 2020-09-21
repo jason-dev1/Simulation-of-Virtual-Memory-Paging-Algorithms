@@ -34,7 +34,6 @@ export function firstInFirstOut(referenceString, frameNumber) {
                 }
             }
     }
-    console.log(pageNotInMemArray);
     return {pageInMemArray, pageFaults, pageNotInMemArray};
 }
 
@@ -77,7 +76,6 @@ export function leastRecentlyUsed(referenceString, frameNumber){
             }
         }
     }
-    console.log(pageNotInMemArray);
     return {pageInMemArray, pageFaults, pageNotInMemArray};
 }
 
@@ -133,7 +131,6 @@ export function notRecentlyUsed(referenceString, frameNumber, resetTurns){
             }
         }
     }
-    console.log(pageNotInMemArray);
     return {pageInMemArray, pageFaults, pageNotInMemArray};
 }
 
@@ -186,7 +183,6 @@ export function secondChance(referenceString, frameNumber){
             }
         }
     }
-    console.log(pageNotInMemArray);
     return {pageInMemArray, pageFaults, pageNotInMemArray};
 }
 
@@ -239,7 +235,6 @@ export function notFrequentlyUsed(referenceString, frameNumber){
         }
 
     }
-    console.log(pageNotInMemArray);
     return {pageInMemArray, pageFaults, pageNotInMemArray};
 }
 
@@ -294,6 +289,5 @@ export function aging(referenceString, frameNumber){
             }
         }
     }
-    console.log(pageNotInMemArray);
     return {pageInMemArray, pageFaults, pageNotInMemArray};
 }

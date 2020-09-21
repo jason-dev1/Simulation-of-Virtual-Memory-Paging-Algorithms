@@ -1,21 +1,28 @@
 import React, {Component} from 'react';
-import Header from "./Component/header";
-import Tables from "./Component/tables";
-import {refStringGen} from "./randomRefStringGen";
+import Header from "./component/header";
+import Tables from "./component/tables";
+import {refStringGen} from "./utils/randomRefStringGen";
+import "font-awesome/css/font-awesome.css"
 
-/*
-TODO: Algorithms chooser
-      Animation enabler
-      Algorithm Information
-      Outside the box (memory swapped out)
-      Table font
-*/
+import List from "./component/list";
+import {
+    aging,
+    firstInFirstOut,
+    leastRecentlyUsed,
+    notFrequentlyUsed,
+    notRecentlyUsed,
+    secondChance
+} from "./algorithms";
+
 class App extends Component{
     state = {
-        referenceInputTextField : "0,2,3,1,2,1,4,5,6,2,4,5,3,2,3,8,5,7,2,0,6,4,1,8",
+        referenceInputTextField : "0,2,3,1,2,1,4,5,6,2,4,5,3,2,3,8,5,7,2,0,6,4,1,9",
         referenceString : ["0", "2", "3", "1", "2", "1", "4", "5", "6", "2", "4", "5", "3", "2", "3", "8", "5", "7", "2", "0", "6", "4", "1", "9"],
         frameNumber : 4,
-        resetTurns: 4
+        resetTurns: 4,
+        swapToggle: false,
+        animationToggle: true,
+        selectedAlgorithm: {name: "All Algorithms"},
     }
 
     handleRefChange = ({target}) => {
@@ -37,34 +44,70 @@ class App extends Component{
             this.setState({resetTurns: target.value});
     }
 
+    handleSwapToggle = () => {
+        this.setState({swapToggle: !this.state.swapToggle});
+    }
+
     handleRefStringGenClick = () => {
-        let tempReferenceStringInput =  refStringGen(30,9);
+        let tempReferenceStringInput =  refStringGen(24,9);
         let tempReferenceString = [...tempReferenceStringInput.split(",")];
         let filteredReferenceString = tempReferenceString.filter((value, index, array) => value !== "");
         this.setState({referenceInputTextField: tempReferenceStringInput, referenceString: filteredReferenceString});
     }
 
+    handleAnimationToggle = () =>{
+        this.setState({animationToggle: !this.state.animationToggle});
+    }
+
+    handleListChange = (algorithm) => {
+        this.setState({selectedAlgorithm:algorithm});
+    }
+
+
     render() {
-        let {frameNumber, resetTurns, referenceString, referenceInputTextField} = this.state;
-        let {handleRefChange, handleFrameChange, handleResetTurnsChange, handleRefStringGenClick} = this;
+        let {frameNumber, resetTurns, referenceString, referenceInputTextField, swapToggle, animationToggle, selectedAlgorithm} = this.state;
+        let {handleRefChange, handleFrameChange, handleResetTurnsChange, handleRefStringGenClick, handleAnimationToggle, handleSwapToggle, handleListChange} = this;
+        const algorithms = [
+            {name : "All Algorithms"},
+            {name : "First In First Out", f : firstInFirstOut},
+            {name : "Second Chance", f : secondChance},
+            {name : "Least Recently Used", f : leastRecentlyUsed},
+            {name : "Not Recently Used", f : notRecentlyUsed},
+            {name : "Not Frequently Used", f : notFrequentlyUsed},
+            {name : "Aging", f : aging}]
+        const filteredAlgorithm = selectedAlgorithm && selectedAlgorithm['f']? algorithms.filter(a => a['name'] === selectedAlgorithm['name']) : algorithms.filter(a=> a['name'] !== "All Algorithms");
         return (
             <main className="container">
-                <React.Fragment>
-                    <Header
-                        handleRefChange={handleRefChange}
-                        handleFrameChange={handleFrameChange}
-                        handleResetTurnsChange={handleResetTurnsChange}
-                        handleRefStringGenClick={handleRefStringGenClick}
-                        frameNumber={frameNumber}
-                        resetTurns={resetTurns}
-                        referenceInputTextField={referenceInputTextField}
-                    />
-                    <Tables
+                <div className="row">
+                    <div className="col">
+                        <Header
+                            handleRefChange={handleRefChange}
+                            handleFrameChange={handleFrameChange}
+                            handleResetTurnsChange={handleResetTurnsChange}
+                            handleRefStringGenClick={handleRefStringGenClick}
+                            handleSwapToggle={handleSwapToggle}
+                            handleAnimationToggle={handleAnimationToggle}
+                            frameNumber={frameNumber}
+                            resetTurns={resetTurns}
+                            referenceInputTextField={referenceInputTextField}
+                            animationToggle={animationToggle}
+                            swapToggle={swapToggle}
+                        />
+                    </div>
+                    <div className="col-3 pt-lg-4">
+                        <List algorithms={algorithms} handleListChange={handleListChange} selectedAlgorithm={selectedAlgorithm}/>
+                    </div>
+                </div>
+                    <div>
+                        <Tables
                         frameNumber={frameNumber}
                         resetTurns={resetTurns}
                         referenceString={referenceString}
+                        swapToggle={swapToggle}
+                        animationToggle={animationToggle}
+                        algorithms={filteredAlgorithm}
                     />
-                </React.Fragment>
+                    </div>
             </main>
         );
     }

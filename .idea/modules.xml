@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/myfirstreact.iml" filepath="$PROJECT_DIR$/myfirstreact.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vmsim.iml" filepath="$PROJECT_DIR$/vmsim.iml" />
     </modules>
   </component>
 </project>

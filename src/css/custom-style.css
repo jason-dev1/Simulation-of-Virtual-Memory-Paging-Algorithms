@@ -58,3 +58,17 @@
 .table th{
     height: 35px;
 }
+
+.table-custom-style{
+    font-family: "Consolas";
+}
+
+.table-cell-align-center{
+    text-align: center;
+    font-size: large;
+}
+
+.list-group-item
+{
+    padding: 6px 15px;
+}

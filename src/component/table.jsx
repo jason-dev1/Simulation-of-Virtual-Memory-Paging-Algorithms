@@ -4,18 +4,20 @@ import Fade from 'react-reveal/Fade'
 
 export default class Table extends Component{
     render() {
-        let {referenceString, frameNumber, algorithmLabel, algorithm, colorMap, resetTurns} = this.props;
+        let {referenceString, frameNumber, algorithmLabel, algorithm, colorMap, resetTurns, swapToggle, animationToggle} = this.props;
         let {pageInMemArray, pageFaults, pageNotInMemArray} = algorithm(referenceString, frameNumber, resetTurns);
         let frameNumberArray = _.range(0, frameNumber, 1);
         return(
             <div>
-                <label htmlFor="basic-url">{algorithmLabel}</label>
-                <table className="table table-bordered table-sm">
+                <label>{algorithmLabel + ":"}</label>
+                <table className="table table-bordered table-sm table-custom-style">
                     <thead className="thead-dark">
                         <tr>
                             <th>Reference:</th>
                             {referenceString.map( r => (
-                                <Fade right><th>{r}</th></Fade>
+                                animationToggle?
+                                <Fade right><th className="table-cell-align-center">{r}</th></Fade>
+                            : <th className="table-cell-align-center">{r}</th>
                             ))}
                         </tr>
                     </thead>
@@ -24,22 +26,28 @@ export default class Table extends Component{
                         <tr>
                             <th />
                             {pageInMemArray.map( r => (
-                                <Fade right><th className={colorMap.get(r[f])}>{r[f]}</th></Fade>
+                                animationToggle?
+                                <Fade right><th className={colorMap.get(r[f]) + " table-cell-align-center"}>{r[f]}</th></Fade>
+                            : <th className={colorMap.get(r[f]) + " table-cell-align-center"}>{r[f]}</th>
                             ))}
                         </tr>
                     ))}
-                    {frameNumberArray.map( f =>(
+                    {swapToggle ? frameNumberArray.map( f =>(
                         <tr className="thead-light">
                             <th />
                             {pageNotInMemArray.map( r => (
-                                <Fade right><th>{r[f]}</th></Fade>
+                                animationToggle?
+                                <Fade right><th className="table-cell-align-center">{r[f]}</th></Fade>
+                                    :<th className="table-cell-align-center">{r[f]}</th>
                             ))}
                         </tr>
-                    ))}
+                    )) : null}
                     <tr className="thead-dark">
                         <th>Page Fault:</th>
                         {pageFaults.map( f => (
-                            <Fade right><th>{f}</th></Fade>
+                            animationToggle?
+                            <Fade right><th className="table-cell-align-center">{f}</th></Fade>
+                                :<th className="table-cell-align-center">{f}</th>
                         ))}
                     </tr>
                     </tbody>
