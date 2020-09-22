@@ -10,6 +10,7 @@ export default class Table extends Component{
         return(
             <div>
                 <label>{algorithmLabel + ":"}</label>
+                <div className="table-responsive">
                 <table className="table table-bordered table-sm table-custom-style">
                     <thead className="thead-dark">
                         <tr>
@@ -52,6 +53,7 @@ export default class Table extends Component{
                     </tr>
                     </tbody>
                 </table>
+                </div>
             </div>
         );
     }

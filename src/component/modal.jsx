@@ -8,7 +8,7 @@ export function HelpModal() {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            <Button variant="primary mr-2 mt-2" onClick={handleShow}>
                 How To Use
             </Button>
             <Modal show={show} onHide={handleClose} size="lg">

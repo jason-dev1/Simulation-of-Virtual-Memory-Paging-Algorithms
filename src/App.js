@@ -94,7 +94,7 @@ class App extends Component{
                             swapToggle={swapToggle}
                         />
                     </div>
-                    <div className="col-3 pt-lg-4">
+                    <div className="col-3 mt-2">
                         <List algorithms={algorithms} handleListChange={handleListChange} selectedAlgorithm={selectedAlgorithm}/>
                     </div>
                 </div>

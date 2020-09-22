@@ -29,9 +29,9 @@ export default class Header extends Component{
                 </div>
                 <input ref="resetTurns" type="number" min="1" max="9" className="form-control" placeholder="Number of reset turns for NRU [0-9]" value={resetTurns} onChange={handleResetTurnsChange.bind(this)}/>
             </div>
-            <button type="button" className={"btn btn-danger"} onClick={handleRefStringGenClick}>Generate String</button>
-            <button type="button" className={!swapToggle?"btn btn-secondary m-2":"btn btn-outline-secondary m-2"} onClick={handleSwapToggle}>{swapToggle?"Hide swapped out memory" : "Show swapped out memory"}</button>
-            <button type="button" className={!animationToggle?"btn btn-info mr-2":"btn btn-outline-info mr-2"} onClick={handleAnimationToggle}>{animationToggle?"Turn off animation" : "Turn on animation"}</button>
+            <button type="button" className={"btn btn-danger mt-2 mr-2"} onClick={handleRefStringGenClick}>Generate String</button>
+            <button type="button" className={!swapToggle?"btn btn-secondary mt-2 mr-2":"btn btn-outline-secondary mt-2 mr-2"} onClick={handleSwapToggle}>{swapToggle?"Hide swapped out memory" : "Show swapped out memory"}</button>
+            <button type="button" className={!animationToggle?"btn btn-info mt-2 mr-2":"btn btn-outline-info mt-2 mr-2"} onClick={handleAnimationToggle}>{animationToggle?"Turn off animation" : "Turn on animation"}</button>
             <HelpModal/>
         </div>
     )
