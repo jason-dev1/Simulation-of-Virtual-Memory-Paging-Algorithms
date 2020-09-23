@@ -116,6 +116,7 @@ export function secondChance(referenceString, frameNumber){
     let pageNotInMem = [];
     let pageNotInMemArray = [];
     let referenceMapArray = [];
+    let isReplace = false;
     referenceString.forEach( (e) => referenceMap.set(e,0));
     for (let i = 0; i < referenceString.length ; i++)
     {
@@ -140,8 +141,13 @@ export function secondChance(referenceString, frameNumber){
                             pageNotInMem.pop();
                         pageNotInMem.unshift(pageInMem.splice(pageInMem.indexOf(pageInMem[j]),1)[0]);
                         pageInMem.unshift(referenceString[i]);
+                        isReplace = true;
                         break;
                     }
+                }
+                if (!isReplace){
+                    pageNotInMem.unshift(pageInMem.pop());
+                    pageInMem.unshift(referenceString[i]);
                 }
             }
         }
