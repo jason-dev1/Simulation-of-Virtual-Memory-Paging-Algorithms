@@ -32,7 +32,7 @@ export default class Table extends Component{
                     {frameNumberArray.map( f =>(
                         <tr>
                             <th />
-                            {pageInMemArray.map( r => (
+                            {pageInMemArray.map( (r,index) => (
                                 animationToggle?
                                     <Fade right>
                                         <th className={colorMap.get(r[f]) + " table-cell-align-center"}>
@@ -40,8 +40,8 @@ export default class Table extends Component{
                                             {detailToggle?
                                             <sub>
                                                 <sub>
-                                                    {(referenceMapArray[pageInMemArray.indexOf(r)]?
-                                                        referenceMapArray[pageInMemArray.indexOf(r)].get(r[f])
+                                                    {(referenceMapArray[index]?
+                                                        referenceMapArray[index].get(r[f])
                                                         : "")}
                                                 </sub>
                                             </sub>
@@ -53,8 +53,8 @@ export default class Table extends Component{
                                         {detailToggle?
                                             <sub>
                                                 <sub>
-                                                    {(referenceMapArray[pageInMemArray.indexOf(r)]?
-                                                        referenceMapArray[pageInMemArray.indexOf(r)].get(r[f])
+                                                    {(referenceMapArray[index]?
+                                                        referenceMapArray[index].get(r[f])
                                                         : "")}
                                                 </sub>
                                             </sub>

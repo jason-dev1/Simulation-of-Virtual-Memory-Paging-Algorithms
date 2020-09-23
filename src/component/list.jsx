@@ -6,7 +6,7 @@ export default class List extends Component {
         return(
             <ul className="list-group">
             {algorithms.map(a=>
-                <a href="#" onClick={()=>handleListChange(a)} className={a['name'] === selectedAlgorithm['name']? "list-group-item list-group-item-action active" : "list-group-item list-group-item-action"}>{a[textProperty]}</a>) }
+                <a href="/#" onClick={()=>handleListChange(a)} className={a['name'] === selectedAlgorithm['name']? "list-group-item list-group-item-action active" : "list-group-item list-group-item-action"}>{a[textProperty]}</a>) }
             </ul>
         )
     }

@@ -3,7 +3,6 @@ import Header from "./component/header";
 import Tables from "./component/tables";
 import {refStringGen} from "./utils/randomRefStringGen";
 import "font-awesome/css/font-awesome.css"
-
 import List from "./component/list";
 import {
     aging,
@@ -30,7 +29,7 @@ class App extends Component{
         let {value} = target;
         if (value.match(/^$|^[0-9,]+$/) && !value.match(/,,+,*|[0-9][0-9]+[0-9]*/g)) {
                 let tempReferenceString = [...value.split(",")];
-                let filteredReferenceString = tempReferenceString.filter((value, index, array) => value !== "");
+                let filteredReferenceString = tempReferenceString.filter((value) => value !== "");
                 this.setState({referenceInputTextField: value, referenceString: filteredReferenceString});
         }
     }
@@ -52,7 +51,7 @@ class App extends Component{
     handleRefStringGenClick = () => {
         let tempReferenceStringInput =  refStringGen(24,9);
         let tempReferenceString = [...tempReferenceStringInput.split(",")];
-        let filteredReferenceString = tempReferenceString.filter((value, index, array) => value !== "");
+        let filteredReferenceString = tempReferenceString.filter((value) => value !== "");
         this.setState({referenceInputTextField: tempReferenceStringInput, referenceString: filteredReferenceString});
     }
 
