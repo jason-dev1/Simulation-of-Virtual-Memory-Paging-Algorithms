@@ -46,7 +46,16 @@ export default class Table extends Component{
                                             </sub>
                                         </th>
                                     </Fade>
-                            : <th className={colorMap.get(r[f]) + " table-cell-align-center"}>{r[f]}</th>
+                            : <th className={colorMap.get(r[f]) + " table-cell-align-center"}>
+                                        {r[f]}
+                                        <sub>
+                                            <sub>
+                                                {(referenceMapArray[pageInMemArray.indexOf(r)]?
+                                                    referenceMapArray[pageInMemArray.indexOf(r)].get(r[f])
+                                                    : "")}
+                                            </sub>
+                                        </sub>
+                                    </th>
                             ))}
                         </tr>
                     ))}
