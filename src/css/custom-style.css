@@ -70,6 +70,11 @@
 
 .list-group-item
 {
-    padding: 6px 15px;
+    min-width: 90px;
+    padding: 6px 12px;
 }
 
+.list-group-outer-padding
+{
+    padding-left: 0px;
+}

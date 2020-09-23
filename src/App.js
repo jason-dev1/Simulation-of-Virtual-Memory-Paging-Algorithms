@@ -22,7 +22,8 @@ class App extends Component{
         resetTurns: 4,
         swapToggle: false,
         animationToggle: true,
-        selectedAlgorithm: {name: "All Algorithms"},
+        detailToggle: false,
+        selectedAlgorithm: {name: "Show All"},
     }
 
     handleRefChange = ({target}) => {
@@ -59,23 +60,27 @@ class App extends Component{
         this.setState({animationToggle: !this.state.animationToggle});
     }
 
+    handleDetailToggle = () =>{
+        this.setState({detailToggle: !this.state.detailToggle});
+    }
+
     handleListChange = (algorithm) => {
         this.setState({selectedAlgorithm:algorithm});
     }
 
 
     render() {
-        let {frameNumber, resetTurns, referenceString, referenceInputTextField, swapToggle, animationToggle, selectedAlgorithm} = this.state;
-        let {handleRefChange, handleFrameChange, handleResetTurnsChange, handleRefStringGenClick, handleAnimationToggle, handleSwapToggle, handleListChange} = this;
+        let {frameNumber, resetTurns, referenceString, referenceInputTextField, swapToggle, animationToggle, detailToggle, selectedAlgorithm} = this.state;
+        let {handleRefChange, handleFrameChange, handleResetTurnsChange, handleRefStringGenClick, handleAnimationToggle, handleSwapToggle, handleListChange, handleDetailToggle} = this;
         const algorithms = [
-            {name : "All Algorithms"},
+            {name : "Show All"},
             {name : "First In First Out", f : firstInFirstOut},
             {name : "Second Chance", f : secondChance},
             {name : "Least Recently Used", f : leastRecentlyUsed},
             {name : "Not Recently Used", f : notRecentlyUsed},
             {name : "Not Frequently Used", f : notFrequentlyUsed},
             {name : "Aging", f : aging}]
-        const filteredAlgorithm = selectedAlgorithm && selectedAlgorithm['f']? algorithms.filter(a => a['name'] === selectedAlgorithm['name']) : algorithms.filter(a=> a['name'] !== "All Algorithms");
+        const filteredAlgorithm = selectedAlgorithm && selectedAlgorithm['f']? algorithms.filter(a => a['name'] === selectedAlgorithm['name']) : algorithms.filter(a=> a['name'] !== "Show All");
         return (
             <main className="container">
                 <div className="row">
@@ -87,6 +92,8 @@ class App extends Component{
                             handleRefStringGenClick={handleRefStringGenClick}
                             handleSwapToggle={handleSwapToggle}
                             handleAnimationToggle={handleAnimationToggle}
+                            handleDetailToggle={handleDetailToggle}
+                            detailToggle={detailToggle}
                             frameNumber={frameNumber}
                             resetTurns={resetTurns}
                             referenceInputTextField={referenceInputTextField}
@@ -94,7 +101,7 @@ class App extends Component{
                             swapToggle={swapToggle}
                         />
                     </div>
-                    <div className="col-3 mt-2">
+                    <div className="col-3 mt-2 list-group-outer-padding">
                         <List algorithms={algorithms} handleListChange={handleListChange} selectedAlgorithm={selectedAlgorithm}/>
                     </div>
                 </div>
@@ -105,6 +112,7 @@ class App extends Component{
                         referenceString={referenceString}
                         swapToggle={swapToggle}
                         animationToggle={animationToggle}
+                        detailToggle={detailToggle}
                         algorithms={filteredAlgorithm}
                     />
                     </div>

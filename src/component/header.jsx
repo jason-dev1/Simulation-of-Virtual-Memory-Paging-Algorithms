@@ -4,7 +4,7 @@ import {HelpModal} from "./modal";
 
 export default class Header extends Component{
     render() {
-        let {handleRefChange, handleFrameChange, handleResetTurnsChange, handleRefStringGenClick, handleSwapToggle,handleAnimationToggle, frameNumber, referenceInputTextField, resetTurns, animationToggle,swapToggle} = this.props;
+        let {handleRefChange, handleFrameChange, handleResetTurnsChange, handleRefStringGenClick, handleSwapToggle,handleAnimationToggle, frameNumber, referenceInputTextField, resetTurns, animationToggle,swapToggle, handleDetailToggle, detailToggle} = this.props;
     return (
         <div>
             <div className="jumbotron bg-transparent">
@@ -31,7 +31,8 @@ export default class Header extends Component{
             </div>
             <button type="button" className={"btn btn-danger mt-2 mr-2"} onClick={handleRefStringGenClick}>Generate String</button>
             <button type="button" className={!swapToggle?"btn btn-secondary mt-2 mr-2":"btn btn-outline-secondary mt-2 mr-2"} onClick={handleSwapToggle}>{swapToggle?"Hide swapped out memory" : "Show swapped out memory"}</button>
-            <button type="button" className={!animationToggle?"btn btn-info mt-2 mr-2":"btn btn-outline-info mt-2 mr-2"} onClick={handleAnimationToggle}>{animationToggle?"Turn off animation" : "Turn on animation"}</button>
+            <button type="button" className={!animationToggle?"btn btn-success mt-2 mr-2":"btn btn-outline-success mt-2 mr-2"} onClick={handleAnimationToggle}>{animationToggle?"Turn off animation" : "Turn on animation"}</button>
+            <button type="button" className={!detailToggle?"btn btn-info mt-2 mr-2":"btn btn-outline-info mt-2 mr-2"} onClick={handleDetailToggle}>{detailToggle?"Hide details" : "Show details"}</button>
             <HelpModal/>
         </div>
     )

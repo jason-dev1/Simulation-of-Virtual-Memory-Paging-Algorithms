@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade'
 
 export default class Table extends Component{
     render() {
-        let {referenceString, frameNumber, algorithmLabel, algorithm, colorMap, resetTurns, swapToggle, animationToggle} = this.props;
+        let {referenceString, frameNumber, algorithmLabel, algorithm, colorMap, resetTurns, swapToggle, animationToggle, detailToggle} = this.props;
         let {pageInMemArray, pageFaults, pageNotInMemArray, referenceMapArray} = algorithm(referenceString, frameNumber, resetTurns);
         let frameNumberArray = _.range(0, frameNumber, 1);
         return(
@@ -37,6 +37,7 @@ export default class Table extends Component{
                                     <Fade right>
                                         <th className={colorMap.get(r[f]) + " table-cell-align-center"}>
                                             {r[f]}
+                                            {detailToggle?
                                             <sub>
                                                 <sub>
                                                     {(referenceMapArray[pageInMemArray.indexOf(r)]?
@@ -44,17 +45,20 @@ export default class Table extends Component{
                                                         : "")}
                                                 </sub>
                                             </sub>
+                                                : ""}
                                         </th>
                                     </Fade>
                             : <th className={colorMap.get(r[f]) + " table-cell-align-center"}>
                                         {r[f]}
-                                        <sub>
+                                        {detailToggle?
                                             <sub>
-                                                {(referenceMapArray[pageInMemArray.indexOf(r)]?
-                                                    referenceMapArray[pageInMemArray.indexOf(r)].get(r[f])
-                                                    : "")}
+                                                <sub>
+                                                    {(referenceMapArray[pageInMemArray.indexOf(r)]?
+                                                        referenceMapArray[pageInMemArray.indexOf(r)].get(r[f])
+                                                        : "")}
+                                                </sub>
                                             </sub>
-                                        </sub>
+                                            : ""}
                                     </th>
                             ))}
                         </tr>
