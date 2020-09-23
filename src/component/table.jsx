@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade'
 export default class Table extends Component{
     render() {
         let {referenceString, frameNumber, algorithmLabel, algorithm, colorMap, resetTurns, swapToggle, animationToggle} = this.props;
-        let {pageInMemArray, pageFaults, pageNotInMemArray} = algorithm(referenceString, frameNumber, resetTurns);
+        let {pageInMemArray, pageFaults, pageNotInMemArray, referenceMapArray} = algorithm(referenceString, frameNumber, resetTurns);
         let frameNumberArray = _.range(0, frameNumber, 1);
         return(
             <div>
@@ -14,11 +14,17 @@ export default class Table extends Component{
                 <table className="table table-bordered table-sm table-custom-style">
                     <thead className="thead-dark">
                         <tr>
-                            <th>Reference:</th>
+                            <th>
+                                Reference:
+                            </th>
                             {referenceString.map( r => (
                                 animationToggle?
-                                <Fade right><th className="table-cell-align-center">{r}</th></Fade>
-                            : <th className="table-cell-align-center">{r}</th>
+                                <Fade right>
+                                    <th className="table-cell-align-center">{r}
+                                    </th>
+                                </Fade>
+                            : <th className="table-cell-align-center">{r}
+                            </th>
                             ))}
                         </tr>
                     </thead>
@@ -28,7 +34,18 @@ export default class Table extends Component{
                             <th />
                             {pageInMemArray.map( r => (
                                 animationToggle?
-                                <Fade right><th className={colorMap.get(r[f]) + " table-cell-align-center"}>{r[f]}</th></Fade>
+                                    <Fade right>
+                                        <th className={colorMap.get(r[f]) + " table-cell-align-center"}>
+                                            {r[f]}
+                                            <sub>
+                                                <sub>
+                                                    {(referenceMapArray[pageInMemArray.indexOf(r)]?
+                                                        referenceMapArray[pageInMemArray.indexOf(r)].get(r[f])
+                                                        : "")}
+                                                </sub>
+                                            </sub>
+                                        </th>
+                                    </Fade>
                             : <th className={colorMap.get(r[f]) + " table-cell-align-center"}>{r[f]}</th>
                             ))}
                         </tr>
@@ -38,7 +55,10 @@ export default class Table extends Component{
                             <th />
                             {pageNotInMemArray.map( r => (
                                 animationToggle?
-                                <Fade right><th className="table-cell-align-center">{r[f]}</th></Fade>
+                                <Fade right>
+                                    <th className="table-cell-align-center">{r[f]}
+                                    </th>
+                                </Fade>
                                     :<th className="table-cell-align-center">{r[f]}</th>
                             ))}
                         </tr>
@@ -47,7 +67,10 @@ export default class Table extends Component{
                         <th>Page Fault:</th>
                         {pageFaults.map( f => (
                             animationToggle?
-                            <Fade right><th className="table-cell-align-center">{f}</th></Fade>
+                            <Fade right>
+                                <th className="table-cell-align-center">{f}
+                                </th>
+                            </Fade>
                                 :<th className="table-cell-align-center">{f}</th>
                         ))}
                     </tr>
