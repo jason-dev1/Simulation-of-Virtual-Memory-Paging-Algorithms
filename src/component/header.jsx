@@ -13,13 +13,13 @@ export default class Header extends Component{
                     <p className="lead">Created By: Jason</p>
                 </div>
             </div>
-            <div className="input-group mb-2">
+            <div className="input-group mt-2">
                 <div className="input-group-prepend">
                     <span className="input-group-text" id="addon-wrapping" data-toggle="tooltip" data-placement="top" title="Enter reference string 0~9 separated with ','">Reference String</span>
                 </div>
                 <input type="text" name = "referenceInputTextField"  className="form-control" placeholder="Reference string [0-9] separated with ','" value={referenceInputTextField} onChange={handleRefChange.bind(this)}/>
             </div>
-            <div className="input-group">
+            <div className="input-group mt-2">
                 <div className="input-group-prepend">
                     <span className="input-group-text" id="addon-wrapping" data-toggle="tooltip" data-placement="top" title="Enter number 0~9">Frame Number</span>
                 </div>
