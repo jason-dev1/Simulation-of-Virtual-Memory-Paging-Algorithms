@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Simulation-of-Virtual-Memory-Paging-Algorithms/precache-manifest.1bed2e556a341ba7cde081d8556c9b69.js"
+  "/Simulation-of-Virtual-Memory-Paging-Algorithms/precache-manifest.b755eb77cede4aecc826c8f32aa85c4a.js"
 );
 
 self.addEventListener('message', (event) => {
