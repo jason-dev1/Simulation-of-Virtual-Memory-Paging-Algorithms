@@ -10,7 +10,7 @@ export default class Header extends Component{
             <div className="jumbotron bg-transparent">
                 <div className="container">
                     <h1 className="display-5">Simulation of Virtual Memory Paging</h1>
-                    <p className="lead">Created By: Jason</p>
+                    <p className="lead">Engineered by Jason</p>
                 </div>
             </div>
             <div className="input-group mt-2">

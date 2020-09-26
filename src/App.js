@@ -78,7 +78,7 @@ class App extends Component{
             {name : "Least Recently Used", f : leastRecentlyUsed},
             {name : "Not Recently Used", f : notRecentlyUsed},
             {name : "Not Frequently Used", f : notFrequentlyUsed},
-            {name : "Aging", f : aging}]
+            {name : "Aging (8 bits counter)", f : aging}]
         const filteredAlgorithm = selectedAlgorithm && selectedAlgorithm['f']? algorithms.filter(a => a['name'] === selectedAlgorithm['name']) : algorithms.filter(a=> a['name'] !== "Show All");
         return (
             <main className="container">

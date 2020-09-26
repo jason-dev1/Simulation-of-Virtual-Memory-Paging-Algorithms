@@ -8,18 +8,23 @@ export function firstInFirstOut(referenceString, frameNumber) {
     let pageNotInMemArray = [];
     let referenceMapArray = [];
     for (let i = 0; i < referenceString.length; i++) {
+            //If the frames include the string, no page fault
             if (pageInMem.includes(referenceString[i])) {
-                pageFaults.push('');                                //No page faults
+                pageFaults.push('');
             } else {
-                pageFaults.push('F');                               //Page faults occurs
+                //Page fault occurs
+                pageFaults.push('F');
+                //If there is free frame
                 if (pageInMem.length < frameNumber) {
-                    pageInMem.unshift(referenceString[i]);          //add to the top of the array
+                    //add to the top of the array
+                    pageInMem.unshift(referenceString[i]);
                 } else {
                     if (pageNotInMem.length >= frameNumber) {
                         pageNotInMem.pop();
                     }
-                    pageNotInMem.unshift(pageInMem.pop());          //remove the last(oldest) page}
-                    pageInMem.unshift(referenceString[i]);           //insert the new page into the top of the array
+                    pageNotInMem.unshift(pageInMem.pop());
+                    //insert the new page into the top of the array
+                    pageInMem.unshift(referenceString[i]);
                 }
             }
         pageInMemArray.push([...pageInMem]);
@@ -73,11 +78,11 @@ export function notRecentlyUsed(referenceString, frameNumber, resetTurns){
     for (let i = 0; i < referenceString.length ; i++)
     {
         if (i%resetTurns === 0){
-            referenceString.forEach( (e) => referenceMap.set(e,0));
+            referenceString.forEach( (e) => referenceMap.set(e,0));//reset clock condition, reset all reference bit to 0
         }
         if (pageInMem.includes(referenceString[i])){
             pageFaults.push('');
-            referenceMap.set(referenceString[i], 1);  //set reference bit to 1
+            referenceMap.set(referenceString[i], 1);                //set reference bit to 1
         }
         else{
             pageFaults.push('F');
@@ -87,7 +92,7 @@ export function notRecentlyUsed(referenceString, frameNumber, resetTurns){
             else{
                 for (let j = frameNumber-1; j >=0 ; j--){
                     if (referenceMap.get(pageInMem[j])===1){
-                        referenceMap.set(pageInMem[j], 0);
+                        referenceMap.set(pageInMem[j], 0);          //second chance, reset reference bit to 0
                     }
                     else
                     {
@@ -117,12 +122,12 @@ export function secondChance(referenceString, frameNumber){
     let pageNotInMemArray = [];
     let referenceMapArray = [];
     let isReplace = false;
-    referenceString.forEach( (e) => referenceMap.set(e,0));
+    referenceString.forEach( (e) => referenceMap.set(e,0)); //initialize all reference bit to 0
     for (let i = 0; i < referenceString.length ; i++)
     {
         if (pageInMem.includes(referenceString[i])){
             pageFaults.push('');
-            referenceMap.set(referenceString[i], 1);  //set reference bit to 1
+            referenceMap.set(referenceString[i], 1);        //set reference bit to 1
         }
         else{
             pageFaults.push('F');
@@ -166,12 +171,12 @@ export function notFrequentlyUsed(referenceString, frameNumber){
     let pageNotInMem = [];
     let pageNotInMemArray = [];
     let referenceMapArray = [];
-    referenceString.forEach( (e) => frequentMap.set(e,0));
+    referenceString.forEach( (e) => frequentMap.set(e,0));                                 //initialize counter as 0
     for (let i = 0; i < referenceString.length ; i++)
     {
         if (pageInMem.includes(referenceString[i])){
             pageFaults.push('');
-            frequentMap.set(referenceString[i], frequentMap.get(referenceString[i]) + 1);  //add counter
+            frequentMap.set(referenceString[i], frequentMap.get(referenceString[i]) + 1);  //increment counter
         }
         else{
             pageFaults.push('F');
@@ -182,7 +187,7 @@ export function notFrequentlyUsed(referenceString, frameNumber){
                 //page replacement algorithm here
                 let lowestCount = frequentMap.get(pageInMem[frameNumber - 1]);
                 let lowestCountHolder = pageInMem[frameNumber - 1];
-                for (let count = frameNumber - 2; count >= 0; count--){
+                for (let count = frameNumber - 2; count >= 0; count--){                     //find out the lowest count (victim)
                     if (frequentMap.get(pageInMem[count]) < lowestCount){
                         lowestCount = frequentMap.get(pageInMem[count]);
                         lowestCountHolder = pageInMem[count];
@@ -191,7 +196,7 @@ export function notFrequentlyUsed(referenceString, frameNumber){
                 if (pageNotInMem.length >= frameNumber) {
                     pageNotInMem.pop();
                 }
-                pageNotInMem.unshift(pageInMem.splice(pageInMem.indexOf(lowestCountHolder),1)[0]);
+                pageNotInMem.unshift(pageInMem.splice(pageInMem.indexOf(lowestCountHolder),1)[0]);    //replace the lowest count
                 pageInMem.unshift(referenceString[i]);
             }
         }
@@ -210,17 +215,17 @@ export function aging(referenceString, frameNumber){
     let pageNotInMem = [];
     let pageNotInMemArray = [];
     let referenceMapArray = [];
-    referenceString.forEach( (e) => frequentMap.set(e,0));
+    referenceString.forEach( (e) => frequentMap.set(e,0));                      //initialize as 0
     for (let i = 0; i < referenceString.length ; i++)
     {
         if (pageInMem.includes(referenceString[i])){
             pageFaults.push('');
-            frequentMap.forEach( (v,k,map) => frequentMap.set(k, floor(v/2) ));
+            frequentMap.forEach( (v,k) => frequentMap.set(k, floor(v/2) ));     //divide by 2
             frequentMap.set(referenceString[i], frequentMap.get(referenceString[i]) + 256);
         }
         else{
             pageFaults.push('F');
-            frequentMap.forEach( (v,k,map) => frequentMap.set(k, floor(v/2) ));
+            frequentMap.forEach( (v,k) => frequentMap.set(k, floor(v/2) ));     //divide by 2
             if (pageInMem.length < frameNumber){
                 pageInMem.unshift(referenceString[i]);
             }
@@ -237,7 +242,7 @@ export function aging(referenceString, frameNumber){
                 if (pageNotInMem.length >= frameNumber) {
                     pageNotInMem.pop();
                 }
-                pageNotInMem.unshift(pageInMem.splice(pageInMem.indexOf(lowestCountHolder),1)[0]);
+                pageNotInMem.unshift(pageInMem.splice(pageInMem.indexOf(lowestCountHolder),1)[0]);  //replace the lowest count
                 pageInMem.unshift(referenceString[i]);
             }
         }
