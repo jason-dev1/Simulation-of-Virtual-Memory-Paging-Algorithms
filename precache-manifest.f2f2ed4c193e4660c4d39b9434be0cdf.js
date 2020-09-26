@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2a4a0acf86f69b865c1ffcf3b1182484",
+    "revision": "147c5168c47b77b8ac24372743627f7a",
     "url": "/Simulation-of-Virtual-Memory-Paging-Algorithms/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/2.45712b91.chunk.css"
   },
   {
-    "revision": "0f7bb182040a0ded808f",
+    "revision": "f0dc31a6a9d98d3f189f",
     "url": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/main.06db3067.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/2.0b4fe0f8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0f7bb182040a0ded808f",
-    "url": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/main.644f2416.chunk.js"
+    "revision": "f0dc31a6a9d98d3f189f",
+    "url": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/main.518d8625.chunk.js"
   },
   {
     "revision": "e1fcb008fb81f4b103c7",

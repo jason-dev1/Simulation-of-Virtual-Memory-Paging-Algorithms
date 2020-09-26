@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/main.06db3067.chunk.css",
-    "main.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/main.644f2416.chunk.js",
-    "main.js.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/main.644f2416.chunk.js.map",
+    "main.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/main.518d8625.chunk.js",
+    "main.js.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/main.518d8625.chunk.js.map",
     "runtime-main.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/runtime-main.0678efb4.js",
     "runtime-main.js.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/runtime-main.0678efb4.js.map",
     "static/css/2.45712b91.chunk.css": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/2.45712b91.chunk.css",
     "static/js/2.0b4fe0f8.chunk.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/2.0b4fe0f8.chunk.js",
     "static/js/2.0b4fe0f8.chunk.js.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/js/2.0b4fe0f8.chunk.js.map",
     "index.html": "/Simulation-of-Virtual-Memory-Paging-Algorithms/index.html",
-    "precache-manifest.b755eb77cede4aecc826c8f32aa85c4a.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/precache-manifest.b755eb77cede4aecc826c8f32aa85c4a.js",
+    "precache-manifest.f2f2ed4c193e4660c4d39b9434be0cdf.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/precache-manifest.f2f2ed4c193e4660c4d39b9434be0cdf.js",
     "service-worker.js": "/Simulation-of-Virtual-Memory-Paging-Algorithms/service-worker.js",
     "static/css/2.45712b91.chunk.css.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/2.45712b91.chunk.css.map",
     "static/css/main.06db3067.chunk.css.map": "/Simulation-of-Virtual-Memory-Paging-Algorithms/static/css/main.06db3067.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.45712b91.chunk.css",
     "static/js/2.0b4fe0f8.chunk.js",
     "static/css/main.06db3067.chunk.css",
-    "static/js/main.644f2416.chunk.js"
+    "static/js/main.518d8625.chunk.js"
   ]
 }
