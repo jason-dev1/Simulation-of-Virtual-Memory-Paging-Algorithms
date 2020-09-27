@@ -35,12 +35,12 @@ class App extends Component{
     }
 
     handleFrameChange = ({target}) =>{
-        if(target.value < 10)
+        if(target.value <= 7 && target.value >=3 )
             this.setState({frameNumber: target.value});
     }
 
     handleResetTurnsChange = ({target}) => {
-        if (target.value < 10)
+        if (target.value <= 9 && target.value >= 1)
             this.setState({resetTurns: target.value});
     }
 

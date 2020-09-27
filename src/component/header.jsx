@@ -23,7 +23,7 @@ export default class Header extends Component{
                 <div className="input-group-prepend">
                     <span className="input-group-text" id="addon-wrapping" data-toggle="tooltip" data-placement="top" title="Enter number 0~9">Frame Number</span>
                 </div>
-                <input ref="frameNumber" type="number" min="1" max="9" className="form-control" placeholder="Frame number [0-9]" value={frameNumber} onChange={handleFrameChange.bind(this)}/>
+                <input ref="frameNumber" type="number" min="3" max="7" className="form-control" placeholder="Frame number [0-9]" value={frameNumber} onChange={handleFrameChange.bind(this)}/>
                 <div className="input-group-prepend">
                     <span className="input-group-text" id="addon-wrapping" data-toggle="tooltip" data-placement="top" title="For NRU, enter reset clock 0~9">Reset Clock</span>
                 </div>
