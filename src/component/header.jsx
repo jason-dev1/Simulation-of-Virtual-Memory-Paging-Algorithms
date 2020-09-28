@@ -21,13 +21,13 @@ export default class Header extends Component{
             </div>
             <div className="input-group mt-2">
                 <div className="input-group-prepend">
-                    <span className="input-group-text" id="addon-wrapping" data-toggle="tooltip" data-placement="top" title="Enter number 0~9">Frame Number</span>
+                    <span className="input-group-text" id="addon-wrapping" data-toggle="tooltip" data-placement="top" title="Enter number 3~7">Frame Number</span>
                 </div>
-                <input ref="frameNumber" type="number" min="3" max="7" className="form-control" placeholder="Frame number [0-9]" value={frameNumber} onChange={handleFrameChange.bind(this)}/>
+                <input ref="frameNumber" type="number" min="3" max="7" className="form-control" placeholder="Frame number [3-7]" value={frameNumber} onChange={handleFrameChange.bind(this)}/>
                 <div className="input-group-prepend">
                     <span className="input-group-text" id="addon-wrapping" data-toggle="tooltip" data-placement="top" title="For NRU, enter reset clock 0~9">Reset Clock</span>
                 </div>
-                <input ref="resetTurns" type="number" min="1" max="9" className="form-control" placeholder="Number of reset turns for NRU [0-9]" value={resetTurns} onChange={handleResetTurnsChange.bind(this)}/>
+                <input ref="resetTurns" type="number" min="0" max="9" className="form-control" placeholder="Number of reset turns for NRU [0-9]" value={resetTurns} onChange={handleResetTurnsChange.bind(this)}/>
             </div>
             <button type="button" className={"btn btn-danger mt-2 mr-2"} onClick={handleRefStringGenClick}>Generate String</button>
             <button type="button" className={!swapToggle?"btn btn-secondary mt-2 mr-2":"btn btn-outline-secondary mt-2 mr-2"} onClick={handleSwapToggle}>{swapToggle?"Hide swapped out memory" : "Show swapped out memory"}</button>
