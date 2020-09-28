@@ -35,7 +35,7 @@ class App extends Component{
     }
 
     handleFrameChange = ({target}) =>{
-        if((target.value <= 7 && target.value >=3) || target.value === 0)
+        if((target.value <= 7 && target.value >=3) || target.value == 0)
             this.setState({frameNumber: target.value});
     }
 
