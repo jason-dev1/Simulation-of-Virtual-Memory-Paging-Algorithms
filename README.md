@@ -2,7 +2,9 @@
 
 ## Simulation of Virtual Memory Paging Algorithms
 
-This is an operating system assignment conducted in my university which serves the purpose of visualizing virtual memory paging algorithms including First in First Out, Second Chance, Least Recently Used, Not Recently Used, Not Frequently Used and Aging.
+This is an operating system assignment conducted in my university which serves the purpose of visualizing virtual memory paging algorithms including First in First Out, Second Chance, Least Recently Used, Not Recently Used, Not Frequently Used and Aging. 
+
+Deployed at: https://jason-dev1.github.io/Simulation-of-Virtual-Memory-Paging-Algorithms/ (This may be taken down due to another project in the future)
 
 ## Development Platform
 
@@ -23,6 +25,3 @@ npm start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the application in the browser.
-
-
-
